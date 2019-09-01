@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<div class = wrpper>
+  <head>
+   
+  </head>
+
+  <div class = content>
+    <% @tweets.each do |tweet| %>
+      <div class="row">
+        <div class="col s12 m8">
+          <div class="card  blue">
+            <div class="card-content white-text">
+              <h3 class="card-title"><%= tweet.name %></h3>
+              <p><%= tweet.text %></p>
+            </div>
+            <div class="card-action">
+              <a><%= link_to '詳細', tweet %></a>
+              <a><%= link_to '編集', edit_tweet_path(tweet) %></a>
+              <a><%= link_to '消去', tweet, method: :delete, data: { confirm: 'Are you sure?' } %></a>
+            </div>
+          </div>
+        </div>
+      </div>
+       
+        </div>
+  
+      </tr>
+    <% end %>
+  </div>
+</div>
+

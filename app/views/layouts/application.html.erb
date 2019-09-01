@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<div class = wrapper>
+<header class="header">
+<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+<link rel="stylesheet" href="normalize.css">
+<nav>
+    <div class="nav-wrapper blue">
+    <i class="fas fa-football-ball fa-5x"></i>
+    <i class="fas fa-football-ball fa-4x"></i>
+    <i class="fas fa-football-ball fa-3x"></i>
+    <i class="fas fa-football-ball fa-2x"></i>
+  
+      <h4 class="brand-logo "><%= link_to 'MEMO', tweets_path %></h4>
+
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      </ul>
+       <div class="header__bar row">
+       
+      <% if user_signed_in? %>
+      
+        <div class="user_nav grid-6">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          <a class="post" href="/tweets/new">投稿する</a>
+        </div>
+      <% else %>
+        <div class="grid-6">
+          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+        </div>
+      <% end %>
+      
+    </div>
+    </div>
+  </nav>
+   
+  </header>
+<html>
+  <head>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
+    <title>Work</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+   <div class = content>
+    <%= yield %>
+    </div>
+  </body>
+ </div>
+  <footer class="page-footer blue">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text"></h5>
+                <p class="grey-text text-lighten-4"></p>
+              </div>
+              <div class="col l4 offset-l2 s12 blue">
+               <i class="fas fa-cog fa-spin fa-3x"></i> 
+               <i class="fas fa-cog fa-spin fa-3x"></i>
+              <i class="fas fa-cog fa-spin fa-3x"></i>
+              <i class="fas fa-cog fa-spin fa-3x"></i>
+              <i class="fas fa-cog fa-spin fa-3x"></i>
+               <i class="fas fa-cog fa-spin fa-3x"></i>
+                <i class="fas fa-cog fa-spin fa-3x"></i>
+                 <i class="fas fa-cog fa-spin fa-3x"></i>
+                  <i class="fas fa-cog fa-spin fa-3x"></i>
+                   <i class="fas fa-cog fa-spin fa-3x"></i>
+                    <i class="fas fa-cog fa-spin fa-3x"></i>
+                     <i class="fas fa-cog fa-spin fa-3x"></i>
+
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright blue">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+
+        </footer>
+</html>
